@@ -80,7 +80,7 @@ function updateMapfromRecent(selectedTown)
 
 //Sunset information function, passed lat and long
 function sunsetInfo(lat,lng){
-	fetch("https://api.sunrise-sunset.org/json?lat="  + lat + "&lng=" + lng ) //fetch request to php script
+	fetch("https://api.sunrise-sunset.org/json?lat="  + lat + "&lng=" + lng + "&date=today"  + "&formatted=0") //fetch request to api 
 	.then(response => response.json())
 	//Call show sunset function with json response (sunset info)
 	.then(json => showSunset(json));
@@ -108,7 +108,7 @@ function weatherInfo(lat,lng){
 	var key= '367cc364cb004882de694e5a89df2362';
 	//XML request and url statement
 	var request = new XMLHttpRequest();
-	var url = "PHP/weather.php?lat=" + lat + "&lng=" + lng + "&key=" + key;
+	var url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lng=" + lng + "&APPID=" + key + "&mode=xml" + "&units=metric"; //fetch request to api 
 	request.open("GET",url);
 	//Check that request is ready and accepted
 	request.onreadystatechange = function(){
