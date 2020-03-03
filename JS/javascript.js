@@ -80,7 +80,7 @@ function updateMapfromRecent(selectedTown)
 
 //Sunset information function, passed lat and long
 function sunsetInfo(lat,lng){
-	fetch("PHP/sunset.php?lat=" + lat + "&lng=" + lng ) //fetch request to php script
+	fetch("https://api.sunrise-sunset.org/json?lat="  + lat + "&lng=" + lng ) //fetch request to php script
 	.then(response => response.json())
 	//Call show sunset function with json response (sunset info)
 	.then(json => showSunset(json));
