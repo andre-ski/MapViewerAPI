@@ -108,7 +108,7 @@ function weatherInfo(lat,lng){
 	var key= '367cc364cb004882de694e5a89df2362';
 	//XML request and url statement
 	var request = new XMLHttpRequest();
-	var url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lng=" + lng + "&APPID=" + key + "&mode=xml" + "&units=metric"; //fetch request to api 
+	var url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lng + "&appid=" + key + "&mode=xml" + "&units=metric"; //fetch request to api 
 	request.open("GET",url);
 	//Check that request is ready and accepted
 	request.onreadystatechange = function(){
